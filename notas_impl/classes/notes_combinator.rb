@@ -5,13 +5,13 @@ class NotesCombinator
 	def initialize( *values )
 		notes_builder = BankNotesBuilder.new
 		@notes = notes_builder.build_notes_for_values( *values )	
-		@count = 0
 		@combos = {}
 		@combos_value = []
 		@raw_values = *values
 	end
 
 	def permute(value)
+		@count = 0
 		qtd = 1
 		while (qtd < value + 1)
 			combos = @raw_values.repeated_combination(qtd)
@@ -20,11 +20,10 @@ class NotesCombinator
 					res = sum + value
 					res
 				end
-				p combo if res == value
+				#p combo if res == value
 				@count = @count+1 if res == value
 			end
 			qtd  = qtd + 1
-
 		end
 	end
 

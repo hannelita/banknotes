@@ -9,9 +9,10 @@ begin
 	values_from_file = loader.load
 	combinator = NotesCombinator.new(1, 2, 5, 10, 20, 50, 100)
 
-	combinator.permute(10)
-	p combinator.count
-
+	(1..20).each do |value|
+		combinator.permute(value)
+		p "Value: #{value}  ---- combinations: #{combinator.count}"
+	end
 
 	# conference_builder = ConferenceBuilder.new(tracks_number.to_i)
 	# conference = conference_builder.build_conference(talks_from_file)
