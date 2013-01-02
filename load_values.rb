@@ -7,10 +7,10 @@ begin
 	path = ARGV[0]
 	loader = FileLoader.new(path)
 	values_from_file = loader.load
-	cominator = NotesCombinator.new(1, 2, 5, 10, 20, 50, 100)
-	cominator.notes.each do |note|
-		p note.value
-	end
+	combinator = NotesCombinator.new(1, 2, 5, 10, 20, 50, 100)
+
+	combinator.permute(10)
+	p combinator.count
 
 
 	# conference_builder = ConferenceBuilder.new(tracks_number.to_i)
